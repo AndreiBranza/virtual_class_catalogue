@@ -61,7 +61,7 @@ public class Driver {
             }
         }
 
-        Utilitaries.average_grade_of_a_student(Andrei_Branza);
+        Andrei_Branza.print_average_grade_ofThis_student();
 
         Utilitaries.average_grade_of_each_class();
 

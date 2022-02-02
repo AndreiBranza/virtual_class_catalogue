@@ -1,11 +1,13 @@
 package main;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Student extends Person {
     private static final ArrayList<Student> total_students = new ArrayList<>();
     private final ArrayList<Grade> grades = new ArrayList<>();
     private long id;
+    private static final DecimalFormat df = new DecimalFormat("0.0");
 
     private Student() {
     }
@@ -54,6 +56,16 @@ public class Student extends Person {
 
     public void setGrade(double value, Subject subject, Teacher teacher) {
         grades.add(new Grade(subject, value, teacher));
+    }
+
+    public void print_average_grade_ofThis_student() {
+        double sum = 0;
+        double average = 0.0;
+        for (int i = 0; i < this.getGrades().size(); i++) {
+            sum += this.getGrades().get(i).getGrade_Value();
+        }
+        average = sum / Subject.values().length;
+        System.out.println("The average grade for student " + this.getFull_Name() + " is : " + df.format(average));
     }
 
     @Override

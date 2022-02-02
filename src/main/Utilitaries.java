@@ -6,10 +6,6 @@ import java.util.HashMap;
 public class Utilitaries {
     private static final DecimalFormat df = new DecimalFormat("0.0");
 
-    //average grade of each student
-        /*
-        ca sa o obtin am nevoie de fiecare medie de la feicare sstudent . fiecare medie = suma tuturor notelor / nr notelor
-         */
     public static void average_grade_of_each_student() {
         for (Student student : Student.getTotal_students()) {
             double sum = 0;
@@ -21,20 +17,6 @@ public class Utilitaries {
 
             System.out.println("The average grade for student " + student.getFull_Name() + " is : " + df.format(average));
         }
-    }
-
-    //average grade of a student
-        /*
-        ca sa o obtin am nevoie de fiecare medie de la feicare sstudent . fiecare medie = suma tuturor notelor / nr notelor
-         */
-    public static void average_grade_of_a_student(Student student) {
-        double sum = 0;
-        double average = 0.0;
-        for (int i = 0; i < student.getGrades().size(); i++) {
-            sum += student.getGrades().get(i).getGrade_Value();
-        }
-        average = sum / Subject.values().length;
-        System.out.println("The average grade for student " + student.getFull_Name() + " is : " + df.format(average));
     }
 
     public static void average_grade_of_each_class() {
@@ -55,10 +37,6 @@ public class Utilitaries {
 
     }
 
-    //average grade of all classes
-    /*
-    ca sa obtin media generala a fiecarei clase am nevoie de fiecare nota a fiecarui elev, suma lor si media
-     */
     public static void average_grade_off_all_classes() {
         double sum = 0;
         double average = 0.0;
